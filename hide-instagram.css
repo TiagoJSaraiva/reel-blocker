@@ -1,0 +1,12 @@
+/* Never use a bare container:has(a[href="/reels/"]): it also matches every ancestor, up to <body>. */
+
+/* navigation */
+a[href="/reels/"] {
+  display: none !important;
+}
+
+/* profile tab */
+a[href$="/reels/"],
+[role="tablist"] a:has(svg[aria-label="Reels"]) {
+  display: none !important;
+}

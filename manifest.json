@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Reels Blocker",
+  "version": "1.0.0",
+  "description": "Blocks Instagram Reels and YouTube Shorts and hides the UI that leads to them.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["declarativeNetRequestWithHostAccess", "webNavigation"],
+  "host_permissions": ["*://*.youtube.com/*", "*://*.instagram.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "blocked_routes",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "css": ["hide-youtube.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["*://www.instagram.com/*"],
+      "css": ["hide-instagram.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html"],
+      "matches": ["*://*.youtube.com/*", "*://*.instagram.com/*"]
+    }
+  ]
+}
