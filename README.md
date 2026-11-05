@@ -1,4 +1,4 @@
-# Reels Blocker
+# Reel Blocker
 
 Extensão para uso pessoal em navegadores baseados em Chromium, como Chrome, Edge, Brave, Opera e Opera GX. Bloqueia Reels (Instagram) e Shorts (YouTube) e esconde os elementos da interface que levam a eles.
 

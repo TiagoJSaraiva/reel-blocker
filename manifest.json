@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Reels Blocker",
+  "name": "Reel Blocker",
   "version": "1.0.0",
   "description": "Blocks Instagram Reels and YouTube Shorts and hides the UI that leads to them.",
   "icons": {
