@@ -1,6 +1,6 @@
 # Reels Blocker
 
-Extensão de navegador para uso pessoal no Opera GX. Bloqueia Reels (Instagram) e Shorts (YouTube) e esconde os elementos da interface que levam a eles.
+Extensão para uso pessoal em navegadores baseados em Chromium, como Chrome, Edge, Brave, Opera e Opera GX. Bloqueia Reels (Instagram) e Shorts (YouTube) e esconde os elementos da interface que levam a eles.
 
 O restante dos sites continua normal: vídeos do YouTube (`/watch?v=`), feed e stories do Instagram.
 
@@ -14,11 +14,29 @@ O restante dos sites continua normal: vídeos do YouTube (`/watch?v=`), feed e s
 
 A interface esconde prateleiras e itens de Shorts, a entrada "Shorts" das barras laterais, a aba "Shorts" dos canais, o link de Reels da navegação do Instagram e a aba de Reels dos perfis.
 
-## Como carregar no Opera GX
+## Como instalar
 
-1. Abra `opera://extensions`.
-2. Ative **Developer mode** (Modo de desenvolvedor).
-3. Clique em **Load unpacked** (Carregar sem compactação) e selecione a pasta `reels-blocker`.
+1. Baixe o código:
+
+   ```sh
+   git clone https://github.com/TiagoJSaraiva/reel-blocker.git
+   ```
+
+   Se preferir, use **Code > Download ZIP** no GitHub e extraia o arquivo. Nesse caso, a pasta se chama `reel-blocker-main`.
+
+2. Abra a página de extensões do navegador:
+
+   | Navegador | Endereço |
+   | --- | --- |
+   | Chrome | `chrome://extensions` |
+   | Edge | `edge://extensions` |
+   | Brave | `brave://extensions` |
+   | Opera e Opera GX | `opera://extensions` |
+
+3. Ative **Developer mode** (Modo de desenvolvedor).
+4. Clique em **Load unpacked** (Carregar sem compactação) e selecione a pasta `reel-blocker`.
+
+Mantenha a pasta no computador, porque o navegador carrega a extensão a partir dela.
 
 Depois de editar um arquivo, clique no botão de recarregar do card da extensão e recarregue as abas do YouTube e do Instagram. Sem recarregar a aba, o CSS novo não é aplicado nela.
 
@@ -33,7 +51,7 @@ Os padrões de URL existem em dois lugares: `regexFilter` em `rules.json` e `BLO
 
 ## Como depurar
 
-- **Console do service worker:** em `opera://extensions`, clique em **service worker** no card da extensão. Mostra erros e avisos de `background.js`, como falhas ao redirecionar uma aba.
+- **Console do service worker:** na página de extensões do navegador, clique em **service worker** no card da extensão. Mostra erros e avisos de `background.js`, como falhas ao redirecionar uma aba.
 - **Console da aba:** abra o DevTools (`F12`) na página do YouTube ou do Instagram para inspecionar elementos e testar seletores. Erros de `blocked.js` aparecem no console da própria página de bloqueio.
 - **Erros da extensão:** o botão **Errors** no card lista os problemas ao carregar, como um `rules.json` inválido.
 
